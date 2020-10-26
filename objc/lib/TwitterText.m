@@ -1426,7 +1426,11 @@ static TwitterTextParser *sDefaultParser;
 + (instancetype)configurationFromJSONResource:(NSString *)jsonResource
 {
     NSError *error = nil;
+#if SWIFT_PACKAGE
+    NSString *sourceFile = [SWIFTPM_MODULE_BUNDLE pathForResource:jsonResource ofType:@"json"];
+#else
     NSString *sourceFile = [[NSBundle bundleForClass:self] pathForResource:jsonResource ofType:@"json"];
+#endif
     NSString *jsonString = [NSString stringWithContentsOfFile:sourceFile encoding:NSUTF8StringEncoding error:&error];
     return !error ? [self configurationFromJSONString:jsonString] : nil;
 }

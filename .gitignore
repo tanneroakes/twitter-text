@@ -6,3 +6,5 @@ java/.idea
 twitter-text.iml
 .DS_Store
 *.sw?
+# Swift Package Manager
+.swiftpm

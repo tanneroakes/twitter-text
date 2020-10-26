@@ -1,0 +1,8 @@
+module TwitterText {
+
+    header "../ThirdParty/IFUnicodeURL/IFUnicodeURL/NSURL+IFUnicodeURL.h"
+    header "../lib/TwitterText.h"
+    header "../lib/TwitterTextEntity.h"
+
+    export *
+}
